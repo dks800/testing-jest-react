@@ -8,7 +8,8 @@ function App() {
   return (
     <div>
       <button style={{backgroundColor: color}} disabled={disabled} onClick={e => changeColor(btnColor)}>Change to {btnColor}</button>
-      <input type='checkbox' defaultChecked={disabled} onChange={()=>setDisabled(!disabled)}/>
+      <input type='checkbox' defaultChecked={disabled} onChange={()=>setDisabled(!disabled)} id="cbx-disable-button"/>
+      <label htmlFor='cbx-disable-button'>Disable button</label>
     </div>
   );
 }
