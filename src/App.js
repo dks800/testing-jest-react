@@ -7,7 +7,7 @@ function App() {
   let btnColor = color === "Red" ? "Blue" : "Red";
   return (
     <div>
-      <button style={{backgroundColor: color}} disabled={disabled} onClick={e => changeColor(btnColor)}>Change to {btnColor}</button>
+      <button style={{backgroundColor: disabled ? 'grey' : color}} disabled={disabled} onClick={e => changeColor(btnColor)}>Change to {btnColor}</button>
       <input type='checkbox' defaultChecked={disabled} onChange={()=>setDisabled(!disabled)} id="cbx-disable-button"/>
       <label htmlFor='cbx-disable-button'>Disable button</label>
     </div>
