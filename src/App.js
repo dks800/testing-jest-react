@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './App.css';
 
+export const replaceCamelcaseWithSpace = (colorName) => {
+  return colorName.replace(/\B([A-Z])\B/g, ' $1');
+}
+
 function App() {
   let [color, changeColor] = useState("Red");
   let [disabled, setDisabled] = useState(false);

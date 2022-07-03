@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
+import {replaceCamelcaseWithSpace} from './App';
 
 test('tests correct initial button color', () => {
   render(<App />)
@@ -48,4 +49,16 @@ test('tests if button turn grey when disabled', () => {
   fireEvent.click(cbx);
   expect(btn).toBeEnabled();
   expect(btn).toHaveStyle({backgroundColor: "Blue"});
+})
+
+describe('spaces before camel case letters', () => {
+  test('tests no camelcase in word', () => {
+    expect(replaceCamelcaseWithSpace("Red")).toBe("Red")
+  })
+  test('tests single camelcase in word', () => {
+    expect(replaceCamelcaseWithSpace("MidnightBlue")).toBe("Midnight Blue")
+  })
+  test('tests multiple camelcase in word', () => {
+    expect(replaceCamelcaseWithSpace("MediumVioletRed")).toBe("Medium Violet Red")
+  })
 })
